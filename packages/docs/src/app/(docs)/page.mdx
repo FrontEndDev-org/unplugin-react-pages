@@ -1,0 +1,40 @@
+# 安装插件
+
+```bash
+npm i -D vite-plugin-react-app
+```
+
+# 使用插件
+
+```js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import reactApp from "vite-plugin-react-app";
+
+export default defineConfig({
+    plugins: [
+        // plugins
+        react(),
+        reactApp(),
+    ],
+});
+```
+
+# 导入应用路由
+
+```js
+import { routes } from "virtual:react-app";
+
+const router = createHashRouter(routes);
+
+<RouterProvider router={router} />;
+```
+
+# 创建页面
+
+```js
+// src/app/page.jsx
+export default function Page() {
+    return <div>Hello World</div>;
+}
+```

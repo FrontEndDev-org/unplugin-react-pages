@@ -1,0 +1,53 @@
+# 安装
+
+```bash
+npm install react react-dom react-router-dom
+npm install -D @types/react @types/react-dom
+npm install -D vite @vitejs/plugin-react vite-plugin-react-app
+```
+
+# 使用（createRouter 方式）
+
+```jsx
+// main.jsx
+import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+import { routes } from "virtual:react-app";
+
+const router = createHashRouter(routes);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        <RouterProvider router={router} />
+    </StrictMode>,
+);
+```
+
+# 使用（useRoutes 方式）
+
+```jsx
+// main.jsx
+import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import { HashRouter } from "react-router-dom";
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        <HashRouter>
+            <App />
+        </HashRouter>
+    </StrictMode>,
+);
+```
+
+```jsx
+// app.jsx
+import { useRoutes } from "react-router-dom";
+import { routes } from "virtual:react-app";
+
+export default function App() {
+    return useRoutes(routes);
+}
+```
