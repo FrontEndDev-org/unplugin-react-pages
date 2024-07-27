@@ -1,0 +1,55 @@
+{
+    "name": "monorepo",
+    "version": "0.0.0",
+    "private": true,
+    "description": "A Vite plugin for running file system routing application. Support React/Vue3",
+    "scripts": {
+        "prepare": "husky install",
+        "lint": "pnpm --filter='vite-plugin-*' run lint",
+        "test": "pnpm --filter='vite-plugin-*' run test",
+        "test:coverage": "pnpm --filter='vite-plugin-*' run test:coverage",
+        "build": "pnpm --filter='vite-plugin-*' run build",
+        "release": "lerna version --yes && git push --follow-tags"
+    },
+    "engines": {
+        "node": "20"
+    },
+    "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+    "sideEffects": false,
+    "workspaces": [
+        "packages/*"
+    ],
+    "typesVersions": {},
+    "keywords": [
+        "cloudcome",
+        "ydr.me",
+        "vite",
+        "plugin",
+        "vite-plugin",
+        "next.js",
+        "react",
+        "vue",
+        "file-system-router",
+        "router",
+        "app"
+    ],
+    "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
+    "maintainers": [],
+    "homepage": "https://github.com/FrontEndDev-org/vite-plugin-react-app",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FrontEndDev-org/vite-plugin-react-app.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@commitlint/cli": "^18.6.1",
+        "@commitlint/config-conventional": "^18.6.3",
+        "@commitlint/types": "^18.6.1",
+        "@types/node": "20",
+        "husky": "^8.0.3",
+        "prettier": "^3.3.3"
+    },
+    "dependencies": {
+        "lint-staged": "^15.2.7"
+    }
+}
