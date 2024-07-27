@@ -2,37 +2,14 @@
   "name": "unplugin-react-pages",
   "version": "0.0.0",
   "description": "A universal plug-in for driving react applications based on file system routing",
-  "scripts": {
-    "build": "NODE_ENV=production vite build",
-    "lint:js": "eslint --ext=.cjs,.mjs,.ts,.tsx src test",
-    "lint:js:fix": "eslint --ext=.cjs,.mjs,.ts,.tsx src test --fix",
-    "lint:type": "tsc --noEmit",
-    "lint": "npm run lint:js && npm run lint:type",
-    "lint:fix": "npm run lint:js:fix && npm run lint:type",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+  "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
+  "license": "MIT",
+  "homepage": "https://github.com/FrontEndDev-org/unplugin-react-page",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrontEndDev-org/unplugin-react-page.git",
+    "directory": "packages/unplugin-react-pages"
   },
-  "engines": {
-    "node": "18 || 20"
-  },
-  "sideEffects": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./package.json": "./package.json",
-    "./client": "./client.d.ts"
-  },
-  "types": "./dist/index.d.ts",
-  "typesVersions": {},
-  "files": [
-    "dist",
-    "client.d.ts"
-  ],
   "keywords": [
     "cloudcome",
     "ydr.me",
@@ -48,15 +25,36 @@
     "react-router",
     "pages"
   ],
-  "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
-  "maintainers": [],
-  "homepage": "https://github.com/FrontEndDev-org/unplugin-react-page",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FrontEndDev-org/unplugin-react-page.git",
-    "directory": "packages/unplugin-react-pages"
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./client": "./client.d.ts"
   },
-  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {},
+  "files": [
+    "client.d.ts",
+    "dist"
+  ],
+  "engines": {
+    "node": "18 || 20"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:type": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "maintainers": [],
   "peerDependencies": {
     "react": "^18.3.1",
     "react-router-dom": "^6.25.1",
