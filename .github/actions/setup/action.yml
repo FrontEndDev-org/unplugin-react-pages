@@ -15,5 +15,5 @@ runs:
         cache-dependency-path: pnpm-lock.yaml
     - run: corepack enable
       shell: bash
-    - run: pnpm i
-      shell: bash
+    # - run: pnpm i
+    #   shell: bash
