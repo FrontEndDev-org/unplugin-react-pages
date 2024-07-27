@@ -1,13 +1,6 @@
 {
-    "*.{,c,m}[jt]s{,x}": [
-        "eslint --fix"
-    ],
-    "*.vue": [
-        "eslint --fix"
-    ],
-       "*.{css,s[ac]ss}": [
-        "stylelint --fix --allow-empty-input",
-        "prettier --write"
-    ],
-    ".json": "prettier --write"
+  "*.{,c,m}[jt]s{,x}": ["eslint --fix"],
+  "*.vue": ["eslint --fix"],
+  "*.{css,s[ac]ss}": ["stylelint --fix --allow-empty-input", "prettier --write"],
+  "*.json": "prettier --write"
 }
