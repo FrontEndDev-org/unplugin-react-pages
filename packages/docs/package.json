@@ -11,7 +11,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "lint:type": "tsc --noEmit"
   },
   "dependencies": {
     "classnames": "^2.5.1",
