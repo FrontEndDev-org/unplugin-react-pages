@@ -1,2 +1,5 @@
+# commit-msg
+
 # https://commitlint.js.org/guides/local-setup.html
 npx --no -- commitlint --edit $1
+

@@ -1,3 +1,5 @@
+# pre-commit
+
 echo "node version = $(node -v)"
 echo "npm version = $(npm -v)"
 
@@ -7,4 +9,5 @@ npx lint-staged --allow-empty
 # https://typicode.github.io/husky/get-started.html#scripting
 git update-index --again
 
-pnpm run pre-commit
+npm run pre-commit
+
