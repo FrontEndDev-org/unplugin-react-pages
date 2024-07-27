@@ -1,0 +1,91 @@
+{
+    "name": "unplugin-react-pages",
+    "version": "0.0.0",
+    "description": "A universal plug-in for driving react applications based on file system routing",
+    "scripts": {
+        "build": "NODE_ENV=production vite build",
+        "lint:js": "eslint --ext=.cjs,.mjs,.ts,.tsx src test",
+        "lint:js:fix": "eslint --ext=.cjs,.mjs,.ts,.tsx src test --fix",
+        "lint:type": "tsc --noEmit",
+        "lint": "npm run lint:js && npm run lint:type",
+        "lint:fix": "npm run lint:js:fix && npm run lint:type",
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage"
+    },
+    "engines": {
+        "node": "18 || 20"
+    },
+    "sideEffects": false,
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        },
+        "./package.json": "./package.json",
+        "./client": "./client.d.ts"
+    },
+    "types": "./dist/index.d.ts",
+    "typesVersions": {},
+    "files": [
+        "dist",
+        "client.d.ts"
+    ],
+    "keywords": [
+        "cloudcome",
+        "ydr.me",
+        "vite",
+        "plugin",
+        "vite-plugin",
+        "next.js",
+        "react",
+        "vue",
+        "file-system-router",
+        "file-system-routing",
+        "router",
+        "react-router",
+        "pages"
+    ],
+    "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
+    "maintainers": [],
+    "homepage": "https://github.com/FrontEndDev-org/vite-plugin-react-app",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FrontEndDev-org/vite-plugin-react-app.git",
+        "directory": "packages/vite-plugin-react-app"
+    },
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-router-dom": "^6.25.1",
+        "vite": "^5.3.4"
+    },
+    "dependencies": {
+      "glob": "^11.0.0",
+      "lodash-es": "^4.17.21"
+  },
+    "devDependencies": {
+        "@types/lodash-es": "^4.17.12",
+        "@types/node": "20",
+        "@types/react": "^18.3.3",
+        "@typescript-eslint/eslint-plugin": "^7.17.0",
+        "@typescript-eslint/parser": "^7.17.0",
+        "@vitest/coverage-v8": "^1.6.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-define-config": "^2.1.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-prettier": "^5.2.1",
+        "prettier": "^3.3.3",
+        "react": "^18.3.1",
+        "react-router-dom": "^6.25.1",
+        "typescript": "^5.5.4",
+        "vite": "^5.3.4",
+        "vite-plugin-dts": "^3.9.1",
+        "vite-plugin-externalize-deps": "^0.8.0",
+        "vitest": "^1.6.0"
+    }
+}
