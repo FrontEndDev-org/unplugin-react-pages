@@ -3,6 +3,6 @@
   "release-type": "node",
   "include-component-in-tag": false,
   "packages": {
-    "packages/unplugin-react-pages": {}
+    ".": {}
   }
 }
