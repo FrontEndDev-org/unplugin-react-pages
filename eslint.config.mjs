@@ -8,8 +8,14 @@ import imp from 'eslint-plugin-import-x';
 
 export default antfu({
   type: 'lib',
-  ignores: ['**/node_modules/**', '**/dist/**', '**/dist-*/**'],
-  files: ['**/.*.{js,cjs,mjs}', '**/*.{js,mjs,cjs,ts,mts,jsx,tsx}'],
+  ignores: [
+    '**/dist/**',
+    '**/dist-*/**',
+  ],
+  files: [
+    '**/.*.{js,cjs,mjs}',
+    '**/*.{js,mjs,cjs,ts,mts,jsx,tsx}',
+  ],
   stylistic: {
     semi: true,
   },

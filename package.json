@@ -26,7 +26,8 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "lint": "pnpm --filter='vite-plugin-*' run lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "pnpm --filter='vite-plugin-*' run test",
     "test:coverage": "pnpm --filter='vite-plugin-*' run test:coverage",
     "build": "pnpm --filter='vite-plugin-*' run build",
