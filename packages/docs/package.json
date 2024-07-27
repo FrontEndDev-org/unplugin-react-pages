@@ -30,6 +30,7 @@
     "sass": "^1.77.8",
     "unplugin-react-pages": "workspace:^",
     "vite": "^5.3.5",
+    "vite-plugin-minify": "^1.5.2",
     "vite-plugin-svg-icons": "^2.0.1"
   }
 }

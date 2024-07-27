@@ -1,11 +1,17 @@
+/**
+ * vite.confifg.mts
+ * @ref https://vitejs.dev/
+ */
+
 import path from 'node:path';
 import mdx from '@mdx-js/rollup';
 import react from '@vitejs/plugin-react';
 import rehypeHighlight from 'rehype-highlight';
-import UnoCSS from 'unocss/vite';
+import uno from 'unocss/vite';
 import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import { reactApp } from '../unplugin-react-pages/src';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import { reactPages } from '../unplugin-react-pages/src';
 
 export default defineConfig({
   server: {
@@ -25,14 +31,25 @@ export default defineConfig({
         ],
       ],
     }),
-    UnoCSS(),
+    uno(),
     createSvgIconsPlugin({
       iconDirs: [path.resolve('src/icons')],
       symbolId: 'icon-[dir]/[name]',
     }),
-    reactApp({
+    ViteMinifyPlugin({
+      minifyCSS: true,
+      minifyJS: true,
+      minifyURLs: true,
+      removeComments: true,
+      collapseWhitespace: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+    }),
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-ignore
+    reactPages({
       debug: true,
-      // logLevel: 'info',
+      logLevel: 'info',
       fileNames: {
         page: ['page.mdx', 'page.tsx'],
       },
