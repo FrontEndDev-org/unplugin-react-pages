@@ -25,7 +25,8 @@ export class ReactApp {
       logger: this.logger,
       resolveFileName: (page, fileType) => {
         const fileNames = ensureArray(this.options.fileNames[fileType]);
-        if (fileNames.length === 0) return;
+        if (fileNames.length === 0)
+          return;
 
         return fileNames.find((fileName) => {
           const absFile = nodePath.join(this.absApp, page.dirName, fileName);
@@ -34,10 +35,12 @@ export class ReactApp {
       },
       resolveDuplicate: (fsNode, duplicatePages) => {
         const fileNames = ensureArray(this.options.fileNames.page);
-        if (fileNames.length === 0) return;
+        if (fileNames.length === 0)
+          return;
 
         for (let i = 0; i < fileNames.length; i++) {
-          if (duplicatePages.includes(fileNames[i])) return i;
+          if (duplicatePages.includes(fileNames[i]))
+            return i;
         }
       },
     });
@@ -61,19 +64,22 @@ export class ReactApp {
     this.logger.info(`setup`);
 
     devServer.watcher.on('unlink', async (path) => {
-      if (!this._inApp(path)) return;
+      if (!this._inApp(path))
+        return;
 
       await this.removeFile(path);
     });
 
     devServer.watcher.on('add', async (path) => {
-      if (!this._inApp(path)) return;
+      if (!this._inApp(path))
+        return;
 
       await this.addFile(path);
     });
 
     devServer.watcher.on('change', async (path) => {
-      if (!this._inApp(path)) return;
+      if (!this._inApp(path))
+        return;
 
       await this.updateFile(path);
     });
@@ -100,7 +106,8 @@ export class ReactApp {
       // .sort((a, b) => a.split(nodePath.sep).length - b.split(nodePath.sep).length);
       this.logger.info(`Page files: ${JSON.stringify(pageFiles2)}`);
       this.fsTree.mount(pageFiles2);
-    } else {
+    }
+    else {
       this.logger.error(`No page file name specified`);
     }
   }

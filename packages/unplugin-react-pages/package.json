@@ -48,8 +48,6 @@
   },
   "scripts": {
     "build": "NODE_ENV=production vite build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "lint:type": "tsc --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"

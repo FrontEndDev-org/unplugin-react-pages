@@ -161,14 +161,16 @@ export class FSNode {
     const parentName = nodePath.basename(parentDir);
     const parentGroup = depth > 0 ? this.group : undefined;
 
-    if (depth < 1) return;
+    if (depth < 1)
+      return;
 
     const parent = this.tree.dirMap.get(parentDir);
 
     if (parent) {
       this.parent = parent;
       parent.children.push(this);
-    } else {
+    }
+    else {
       const newParent = new FSNode(this.tree, {
         pageFileName: '',
         depth: parentDepth,
@@ -192,8 +194,8 @@ export class FSNode {
     const pathName = segments.at(-1) || '.';
     const dirName = segments.join('/') || '.';
     const firstSeg = segments.at(0);
-    const group =
-      depth > 0 && firstSeg?.startsWith('(') && firstSeg?.endsWith(')') ? firstSeg?.slice(1, -1) : undefined;
+    const group
+      = depth > 0 && firstSeg?.startsWith('(') && firstSeg?.endsWith(')') ? firstSeg?.slice(1, -1) : undefined;
     return { pageFileName, depth, dirName, pathName, group };
   }
 
@@ -246,10 +248,12 @@ export class FSTree {
           if (isNumber(chooseIndex) && chooseIndex > -1) {
             fsNode.update(meta);
           }
-        } else {
+        }
+        else {
           fsNode.update(meta);
         }
-      } else {
+      }
+      else {
         FSNode.create(this, meta);
       }
     });
