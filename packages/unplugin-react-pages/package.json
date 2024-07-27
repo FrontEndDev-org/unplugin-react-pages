@@ -1,6 +1,6 @@
 {
   "name": "unplugin-react-pages",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A universal plug-in for driving react applications based on file system routing",
   "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
   "license": "MIT",
