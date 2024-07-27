@@ -12,10 +12,16 @@ import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { reactPages } from '../src';
+import pkg from './package.json';
 
 export default defineConfig({
+  base: process.env.VITE_APP_BASENAME || '/',
   server: {
     port: 15170,
+  },
+  define: {
+    'process.env.PKG_NAME': JSON.stringify(pkg.name),
+    'process.env.PKG_VERSION': JSON.stringify(pkg.version),
   },
   plugins: [
     // plugins

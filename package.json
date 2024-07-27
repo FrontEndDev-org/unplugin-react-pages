@@ -57,8 +57,9 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "build": "NODE_ENV=production vite build",
-    "pre-commit": "echo 0",
-    "pre-commit1": "pnpm run lint:type"
+    "docs:dev": "pnpm -F 'docs' run dev",
+    "docs:build": "pnpm -F 'docs' run build",
+    "pre-commit": "pnpm run lint:type"
   },
   "workspaces": [
     "docs"

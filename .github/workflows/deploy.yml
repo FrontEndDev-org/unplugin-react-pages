@@ -1,0 +1,25 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - v*.x
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VITE_APP_BASENAME: /unplugin-react-pages/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: pnpm run docs:build
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/dist
+          publish_branch: ${{ github.ref_name }}-pages

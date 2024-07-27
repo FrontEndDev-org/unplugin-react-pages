@@ -6,9 +6,11 @@ import 'virtual:uno.css';
 import 'virtual:svg-icons-register';
 import App from './App';
 
+const basename = process.env.VITE_APP_BASENAME || '/';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HashRouter basename="/">
+    <HashRouter basename={basename}>
       <App />
     </HashRouter>
   </StrictMode>,
