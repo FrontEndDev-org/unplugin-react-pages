@@ -3,7 +3,7 @@
  * @ref https://www.npmjs.com/package/lint-staged
  */
 export default {
-  '*.{,c,m}[jt]s{,x}': [
+  '*.{js,mjs,cjs,ts,mts,jsx,tsx}': [
     //
     'eslint --fix',
     'prettier --write',
@@ -13,7 +13,7 @@ export default {
     'eslint --fix',
     'prettier --write',
   ],
-  '*.{css,s[ac]ss}': [
+  '*.{css,scss}': [
     //
     'stylelint --fix --allow-empty-input',
     'prettier --write',
