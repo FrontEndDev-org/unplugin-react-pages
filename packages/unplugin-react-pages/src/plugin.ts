@@ -66,7 +66,7 @@ const defaultPluginOptions: () => PluginOptions = () => ({
   excludes: ['**/node_modules/**'],
 });
 
-export function reactApp(userPluginOptions?: UserPluginOptions): Plugin {
+export function reactPages(userPluginOptions?: UserPluginOptions): Plugin {
   let reactApp: ReactApp | null = null;
 
   return {

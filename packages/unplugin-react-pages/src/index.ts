@@ -1,2 +1,2 @@
 export * from './const';
-export { reactApp } from './plugin';
+export { reactPages } from './plugin';
