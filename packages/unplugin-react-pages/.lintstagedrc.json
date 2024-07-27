@@ -5,9 +5,9 @@
     "*.vue": [
         "eslint --fix"
     ],
-    "*.{css,s[ac]ss}": [
+       "*.{css,s[ac]ss}": [
         "stylelint --fix --allow-empty-input",
         "prettier --write"
     ],
-    "(package|tsconfig*).json": "prettier --write"
+    ".json": "prettier --write"
 }
