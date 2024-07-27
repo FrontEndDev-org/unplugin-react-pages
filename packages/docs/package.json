@@ -27,7 +27,7 @@
         "typescript": "^5.5.4",
         "unocss": "^0.61.5",
         "vite": "^5.3.4",
-        "vite-plugin-react-app": "workspace:^",
+        "unplugin-react-pages": "workspace:^",
         "vite-plugin-svg-icons": "^2.0.1"
     }
 }

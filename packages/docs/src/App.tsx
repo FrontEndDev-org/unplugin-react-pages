@@ -26,7 +26,7 @@ export default function App({ children }: PropsWithChildren) {
     return (
         <section className="min-h-screen max-w-200 mx-auto flex flex-col gap-5 pt-2 px-5 pb-5">
             <header className="flex justify-between items-center pa-2 relative sticky-0 top-0 z-9 bg-gray-1 rounded-2 shadow sticky top-2">
-                <A to="/">vite-plugin-react-app</A>
+                <A to="/">unplugin-react-pages</A>
 
                 <div className="flex items-center gap-4 list-none">
                     <A to="/docs">Docs</A>

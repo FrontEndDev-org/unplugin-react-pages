@@ -5,7 +5,7 @@ import rehypeHighlight from 'rehype-highlight';
 import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import { reactApp } from '../vite-plugin-react-app/src';
+import { reactApp } from '../unplugin-react-pages/src';
 
 export default defineConfig({
     server: {
