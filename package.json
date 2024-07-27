@@ -28,10 +28,9 @@
     "prepare": "husky",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "pnpm --filter='vite-plugin-*' run test",
-    "test:coverage": "pnpm --filter='vite-plugin-*' run test:coverage",
-    "build": "pnpm --filter='vite-plugin-*' run build",
-    "release": "lerna version --yes && git push --follow-tags"
+    "test": "pnpm --filter='unplugin-*' run test",
+    "test:coverage": "pnpm --filter='unplugin-*' run test:coverage",
+    "build": "pnpm --filter='unplugin-*' run build"
   },
   "workspaces": [
     "packages/*"
