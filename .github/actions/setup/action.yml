@@ -8,11 +8,11 @@ runs:
       shell: bash
     - run: timedatectl
       shell: bash
-    - uses: pnpm/action-setup@v4
+    - uses: pnpm/action-setup@v4 # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
     - uses: actions/setup-node@v4
       with:
         node-version-file: .nvmrc
-        cache: 'pnpm'
+        cache: pnpm
         cache-dependency-path: pnpm-lock.yaml
     - run: corepack enable
       shell: bash
