@@ -47,7 +47,7 @@ export default defineConfig({
     }),
     // eslint-disable-next-line ts/ban-ts-comment
     // @ts-ignore
-    reactPages({
+    reactPages.vite({
       debug: true,
       logLevel: 'info',
       fileNames: {
