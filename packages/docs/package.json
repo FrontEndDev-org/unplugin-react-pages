@@ -10,8 +10,6 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "lint:type": "tsc --noEmit"
   },
   "dependencies": {

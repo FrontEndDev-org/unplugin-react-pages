@@ -21,6 +21,10 @@ const navs = [
     href: '/docs/options',
   },
   {
+    label: 'Eslint 支持',
+    href: '/docs/eslint',
+  },
+  {
     label: '路由布局 layout',
     href: '/docs/layout',
   },
@@ -46,7 +50,7 @@ export default function Layout() {
       <div>
         <aside className="fixed">
           <div className="w-150px flex flex-col gap-2 text-14px">
-            {navs.map((nav) => (
+            {navs.map(nav => (
               <NavLink
                 key={nav.label}
                 className={({ isActive }) =>
@@ -55,8 +59,7 @@ export default function Layout() {
                       'bg-gray-6! text-gray-1!': location.pathname === nav.href || (nav.href !== '/docs' && isActive),
                     },
                     'bg-transparent text-gray-6 hover:bg-gray-2 block decoration-none rounded-1 px-3 py-2',
-                  )
-                }
+                  )}
                 to={nav.href}
               >
                 {nav.label}

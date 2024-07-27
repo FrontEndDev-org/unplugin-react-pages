@@ -32,7 +32,7 @@ export default defineConfig({
     }),
     reactApp({
       debug: true,
-      logLevel: 'info',
+      // logLevel: 'info',
       fileNames: {
         page: ['page.mdx', 'page.tsx'],
       },

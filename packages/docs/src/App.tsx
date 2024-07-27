@@ -13,8 +13,7 @@ function A({ children, to }: PropsWithChildren<{ to: string }>) {
             'bg-gray-6! text-gray-1!': isActive,
           },
           'text-4 text-gray-7 decoration-none rounded-1 px-4 py-2 flex items-center hover:bg-gray-2 transition-background-color duration-300',
-        )
-      }
+        )}
       to={to}
     >
       {children}
