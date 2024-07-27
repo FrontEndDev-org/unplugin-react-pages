@@ -1,4 +1,4 @@
 {
-    "*.{cjs,json}": "prettier --write",
-    ".github/*": "prettier --write"
+  "*.{cjs,json}": "prettier --write",
+  ".github/*": "prettier --write"
 }
