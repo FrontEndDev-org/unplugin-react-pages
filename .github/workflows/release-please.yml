@@ -26,6 +26,7 @@ jobs:
     permissions:
       id-token: write
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: pnpm run build
       - uses: FrontEndDev-org/publish-node-package-action@v2
@@ -41,6 +42,7 @@ jobs:
     permissions:
       packages: write
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: pnpm run build
       - uses: FrontEndDev-org/publish-node-package-action@v2

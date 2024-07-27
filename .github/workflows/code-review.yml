@@ -15,12 +15,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: pnpm run lint
 
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: pnpm run test:coverage
       - uses: codacy/codacy-coverage-reporter-action@v1
