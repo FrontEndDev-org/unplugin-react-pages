@@ -11,7 +11,7 @@ import uno from 'unocss/vite';
 import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
-import { reactPages } from '../unplugin-react-pages/src';
+import { reactPages } from '../src';
 
 export default defineConfig({
   server: {

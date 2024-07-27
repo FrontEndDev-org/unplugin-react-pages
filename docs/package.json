@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "NODE_ENV=production vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 15171",
     "lint:type": "tsc --noEmit"
   },
   "dependencies": {
