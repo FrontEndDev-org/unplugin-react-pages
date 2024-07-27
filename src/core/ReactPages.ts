@@ -1,7 +1,7 @@
 import nodeFS from 'node:fs';
 import nodePath from 'node:path';
 import { glob } from 'glob';
-import { type Logger, type ResolvedConfig, type ViteDevServer, createLogger, normalizePath } from 'vite';
+import { type Logger, type ViteDevServer, createLogger, normalizePath } from 'vite';
 import { pkgName } from '../const';
 import { ensureArray } from '../helpers';
 import type { PluginOptions } from '../plugin';

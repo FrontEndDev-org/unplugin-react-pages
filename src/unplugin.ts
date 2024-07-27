@@ -1,4 +1,3 @@
-import { config } from 'node:process';
 import { createUnplugin } from 'unplugin';
 import { pkgName } from './const';
 import { ReactPages } from './core/ReactPages';
