@@ -31,7 +31,7 @@ export default function App({ children }: PropsWithChildren) {
                 <div className="flex items-center gap-4 list-none">
                     <A to="/docs">Docs</A>
                     <A to="/demo">Demo</A>
-                    <A to="https://github.com/FrontEndDev-org/vite-plugin-react-app">
+                    <A to="https://github.com/FrontEndDev-org/unplugin-react-pages">
                         <SvgIcon icon="github" className="w-5 h-5" />
                     </A>
                 </div>

@@ -50,11 +50,11 @@
     ],
     "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
     "maintainers": [],
-    "homepage": "https://github.com/FrontEndDev-org/vite-plugin-react-app",
+    "homepage": "https://github.com/FrontEndDev-org/unplugin-react-page",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/FrontEndDev-org/vite-plugin-react-app.git",
-        "directory": "packages/vite-plugin-react-app"
+        "url": "git+https://github.com/FrontEndDev-org/unplugin-react-page.git",
+        "directory": "packages/unplugin-react-pages"
     },
     "license": "MIT",
     "peerDependencies": {
