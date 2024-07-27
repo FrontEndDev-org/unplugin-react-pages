@@ -30,7 +30,8 @@
     "lint:fix": "eslint . --fix",
     "test": "pnpm --filter='unplugin-*' run test",
     "test:coverage": "pnpm --filter='unplugin-*' run test:coverage",
-    "build": "pnpm --filter='unplugin-*' run build"
+    "build": "pnpm --filter='unplugin-*' run build",
+    "pre-commit": "pnpm --filter='unplugin-*' run lint:type"
   },
   "workspaces": [
     "packages/*"
