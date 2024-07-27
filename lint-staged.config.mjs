@@ -1,9 +1,8 @@
 /**
- * lint-staged config
+ * lint-staged.config.mjs
  * @ref https://www.npmjs.com/package/lint-staged
  */
-
-module.exports = {
+export default {
   '*.{,c,m}[jt]s{,x}': [
     //
     'eslint --fix',

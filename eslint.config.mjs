@@ -1,3 +1,7 @@
+/**
+ * eslint.config.mjs
+ * @ref https://eslint.org/
+ */
 import { defineFlatConfig } from 'eslint-define-config';
 import stylistic from '@stylistic/eslint-plugin';
 import prettier from 'eslint-config-prettier';
