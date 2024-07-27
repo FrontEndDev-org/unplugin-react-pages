@@ -7,11 +7,11 @@ import { ensureArray } from '../helpers';
 import type { PluginOptions } from '../plugin';
 import { FSTree } from './FSTree';
 
-export type ReactAppChange = (this: ReactApp) => unknown;
-export class ReactApp {
+export type ReactPagesChange = (this: ReactPages) => unknown;
+export class ReactPages {
   logger: Logger;
   fsTree: FSTree;
-  absApp: string;
+  absPagesDir: string;
 
   constructor(
     readonly options: PluginOptions,
@@ -19,9 +19,9 @@ export class ReactApp {
   ) {
     this.logger = createLogger(options.logLevel, { prefix: `[${pkgName}]` });
     this.logger.info(`new Options: ${JSON.stringify(options)}`);
-    this.absApp = nodePath.join(this.config.root, options.appDir);
+    this.absPagesDir = nodePath.join(this.config.root, options.pagesDir);
     this.fsTree = new FSTree({
-      cwd: nodePath.join('/', options.appDir),
+      cwd: nodePath.join('/', options.pagesDir),
       logger: this.logger,
       resolveFileName: (page, fileType) => {
         const fileNames = ensureArray(this.options.fileNames[fileType]);
@@ -29,7 +29,7 @@ export class ReactApp {
           return;
 
         return fileNames.find((fileName) => {
-          const absFile = nodePath.join(this.absApp, page.dirName, fileName);
+          const absFile = nodePath.join(this.absPagesDir, page.dirName, fileName);
           return nodeFS.existsSync(absFile) && nodeFS.statSync(absFile).isFile();
         });
       },
@@ -46,39 +46,44 @@ export class ReactApp {
     });
   }
 
-  get output() {
+  async generate() {
+    if (!this.isSetup) {
+      this.logger.info(`is not setup, try to setup again`);
+      await this.setup();
+    }
+
     const output = this.fsTree.render();
     this.logger.info(`Generated: ${output}`);
     return output;
   }
 
-  private _inApp(path: string) {
-    return path.startsWith(this.absApp);
+  private _inPagesDir(path: string) {
+    return path.startsWith(this.absPagesDir);
   }
 
   private devServer?: ViteDevServer;
   private onChange?: () => unknown;
-  async connect(devServer: ViteDevServer, onChange: ReactAppChange) {
+  async watch(devServer: ViteDevServer, onChange: ReactPagesChange) {
     this.devServer = devServer;
     this.onChange = onChange;
     this.logger.info(`setup`);
 
     devServer.watcher.on('unlink', async (path) => {
-      if (!this._inApp(path))
+      if (!this._inPagesDir(path))
         return;
 
       await this.removeFile(path);
     });
 
     devServer.watcher.on('add', async (path) => {
-      if (!this._inApp(path))
+      if (!this._inPagesDir(path))
         return;
 
       await this.addFile(path);
     });
 
     devServer.watcher.on('change', async (path) => {
-      if (!this._inApp(path))
+      if (!this._inPagesDir(path))
         return;
 
       await this.updateFile(path);
@@ -87,8 +92,18 @@ export class ReactApp {
     await this.setup();
   }
 
+  private _isSetup = false;
+  get isSetup() {
+    return this._isSetup;
+  }
+
   async setup() {
-    this.logger.info(`setup`);
+    if (this.isSetup) {
+      this.logger.error(`is already setup`);
+      return;
+    }
+
+    this.logger.info(`setup react pages ${this.absPagesDir}`);
 
     const pageFileNames = ensureArray(this.options.fileNames.page);
 
@@ -96,7 +111,7 @@ export class ReactApp {
       const pageFiles = await glob(
         nodePath.join('**', pageFileNames.length > 1 ? `{${pageFileNames.join(',')}}` : pageFileNames[0]),
         {
-          cwd: this.absApp,
+          cwd: this.absPagesDir,
           nodir: true,
           dot: false,
           ignore: this.options.excludes,

@@ -1,6 +1,6 @@
 import type { LogLevel, ModuleNode, Plugin } from 'vite';
 import { pkgName } from './const';
-import { ReactApp } from './core/ReactApp';
+import { ReactPages } from './core/ReactPages';
 import { type DeepPartial, withDefaults } from './helpers';
 import type { FileType } from './core/FSTree';
 
@@ -14,7 +14,7 @@ export interface PluginOptions {
    * 应用目录
    * @default 'src/pages'
    */
-  appDir: string;
+  pagesDir: string;
 
   /**
    * 文件名映射
@@ -45,12 +45,12 @@ export interface PluginOptions {
 export type UserPluginOptions = DeepPartial<PluginOptions>;
 
 // @ref https://cn.vitejs.dev/guide/api-plugin#virtual-modules-convention
-const virtualModuleId = 'virtual:react-app';
+const virtualModuleId = 'virtual:react-pages';
 const resolvedVirtualModuleId = `\0${virtualModuleId}`;
 
 const defaultPluginOptions: () => PluginOptions = () => ({
   debug: false,
-  appDir: 'src/pages',
+  pagesDir: 'src/pages',
   logLevel: 'error',
   disableLazy: false,
   caseSensitive: false,
@@ -67,19 +67,19 @@ const defaultPluginOptions: () => PluginOptions = () => ({
 });
 
 export function reactPages(userPluginOptions?: UserPluginOptions): Plugin {
-  let reactApp: ReactApp | null = null;
+  let reactPages: ReactPages | null = null;
 
   return {
     name: pkgName,
     enforce: 'pre',
 
     async configResolved(config) {
-      reactApp = new ReactApp(withDefaults(defaultPluginOptions(), userPluginOptions), config);
+      reactPages = new ReactPages(withDefaults(defaultPluginOptions(), userPluginOptions), config);
     },
 
     async configureServer(server) {
-      await reactApp?.connect(server, function () {
-        this.logger.info(`react-app is changed`);
+      await reactPages?.watch(server, function () {
+        this.logger.info(`react-pages is changed`);
 
         const { moduleGraph } = server;
         const mods = moduleGraph.getModulesByFile(resolvedVirtualModuleId);
@@ -108,7 +108,7 @@ export function reactPages(userPluginOptions?: UserPluginOptions): Plugin {
       if (id !== resolvedVirtualModuleId)
         return;
 
-      return reactApp?.output;
+      return reactPages?.generate();
     },
   };
 }
