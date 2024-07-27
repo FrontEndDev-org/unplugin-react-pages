@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "ES2023",
     "jsx": "react",
-    // node18 https://node.green/#ES2023
     "lib": ["ES2023", "DOM"],
     "module": "ESNext",
     "moduleResolution": "Node",
