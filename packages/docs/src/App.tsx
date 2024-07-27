@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import type { PropsWithChildren } from 'react';
 import { NavLink, useRoutes } from 'react-router-dom';
-import { routes } from 'virtual:react-app';
+import { routes } from 'virtual:react-pages';
 import SvgIcon from './icons/SvgIcon';
 
 function A({ children, to }: PropsWithChildren<{ to: string }>) {
