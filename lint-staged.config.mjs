@@ -6,15 +6,19 @@ export default {
   '*.{js,mjs,cjs,ts,mts,jsx,tsx}': [
     'eslint --fix',
   ],
+
   '*.vue': [
     'eslint --fix',
   ],
+
   '*.{css,scss}': [
     'stylelint --fix --allow-empty-input',
   ],
+
   '!(package-lock).json': [
     'prettier --write',
   ],
+
   '!(pnpm-lock).{yml,yaml}': [
     'prettier --write',
   ],
