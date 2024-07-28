@@ -9,7 +9,7 @@ import pkg from './package.json';
  * vitest config
  * @ref https://vitest.dev/
  */
-export default defineConfig((env) => {
+export default defineConfig((config) => {
   return ({
     plugins: [
       externalizeDeps(),
@@ -18,8 +18,8 @@ export default defineConfig((env) => {
       }),
     ],
     define: {
-      PKG_NAME: JSON.stringify(env.mode === 'test' ? 'pkg-name-for-test' : pkg.name),
-      PKG_VERSION: JSON.stringify(env.mode === 'test' ? 'pkg-version-for-test' : pkg.version),
+      PKG_NAME: JSON.stringify(config.mode === 'test' ? 'pkg-name-for-test' : pkg.name),
+      PKG_VERSION: JSON.stringify(config.mode === 'test' ? 'pkg-version-for-test' : pkg.version),
     },
     build: {
       minify: false,
