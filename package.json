@@ -70,9 +70,6 @@
     "lodash-es": "^4.17.21",
     "unplugin": "^1.12.0"
   },
-  "optionalDependencies": {
-    "fsevents": "*"
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
