@@ -1,0 +1,1 @@
+import{j as o}from"./index-BWSNXFtw.js";function e(t){const n={h1:"h1",...t.components};return o.jsx(n.h1,{children:"start-hook"})}function c(t={}){const{wrapper:n}=t.components||{};return n?o.jsx(n,{...t,children:o.jsx(e,{...t})}):e(t)}export{c as default};

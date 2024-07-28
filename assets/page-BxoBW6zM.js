@@ -1,16 +1,16 @@
-import{j as s}from"./index-THxhko_U.js";function a(n){const e={code:"code",h1:"h1",pre:"pre",span:"span",...n.components};return s.jsxs(s.Fragment,{children:[s.jsx(e.h1,{children:"安装插件"}),`
+import{j as s}from"./index-BWSNXFtw.js";function a(n){const e={code:"code",h1:"h1",pre:"pre",span:"span",...n.components};return s.jsxs(s.Fragment,{children:[s.jsx(e.h1,{children:"安装插件"}),`
 `,s.jsx(e.pre,{children:s.jsx(e.code,{className:"hljs language-bash",children:`npm i -D unplugin-react-pages
 `})}),`
 `,s.jsx(e.h1,{children:"使用插件"}),`
 `,s.jsx(e.pre,{children:s.jsxs(e.code,{className:"hljs language-js",children:[s.jsx(e.span,{className:"hljs-keyword",children:"import"})," { defineConfig } ",s.jsx(e.span,{className:"hljs-keyword",children:"from"})," ",s.jsx(e.span,{className:"hljs-string",children:'"vite"'}),`;
 `,s.jsx(e.span,{className:"hljs-keyword",children:"import"})," react ",s.jsx(e.span,{className:"hljs-keyword",children:"from"})," ",s.jsx(e.span,{className:"hljs-string",children:'"@vitejs/plugin-react"'}),`;
-`,s.jsx(e.span,{className:"hljs-keyword",children:"import"})," reactApp ",s.jsx(e.span,{className:"hljs-keyword",children:"from"})," ",s.jsx(e.span,{className:"hljs-string",children:'"unplugin-react-pages"'}),`;
+`,s.jsx(e.span,{className:"hljs-keyword",children:"import"})," { reactPages } ",s.jsx(e.span,{className:"hljs-keyword",children:"from"})," ",s.jsx(e.span,{className:"hljs-string",children:'"unplugin-react-pages"'}),`;
 
 `,s.jsx(e.span,{className:"hljs-keyword",children:"export"})," ",s.jsx(e.span,{className:"hljs-keyword",children:"default"})," ",s.jsx(e.span,{className:"hljs-title function_",children:"defineConfig"}),`({
     `,s.jsx(e.span,{className:"hljs-attr",children:"plugins"}),`: [
         `,s.jsx(e.span,{className:"hljs-comment",children:"// plugins"}),`
         `,s.jsx(e.span,{className:"hljs-title function_",children:"react"}),`(),
-        `,s.jsx(e.span,{className:"hljs-title function_",children:"reactApp"}),`(),
+        reactPages.`,s.jsx(e.span,{className:"hljs-title function_",children:"vite"}),`(),
     ],
 });
 `]})}),`

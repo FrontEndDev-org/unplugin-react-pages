@@ -1,4 +1,4 @@
-import{j as s}from"./index-THxhko_U.js";function l(a){const e={code:"code",h1:"h1",pre:"pre",span:"span",...a.components};return s.jsxs(s.Fragment,{children:[s.jsx(e.h1,{children:"安装"}),`
+import{j as s}from"./index-BWSNXFtw.js";function l(a){const e={code:"code",h1:"h1",pre:"pre",span:"span",...a.components};return s.jsxs(s.Fragment,{children:[s.jsx(e.h1,{children:"安装"}),`
 `,s.jsx(e.pre,{children:s.jsx(e.code,{className:"hljs language-bash",children:`npm install react react-dom react-router-dom
 npm install -D @types/react @types/react-dom
 npm install -D vite @vitejs/plugin-react unplugin-react-pages

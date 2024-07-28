@@ -1,1 +1,0 @@
-import{j as e}from"./index-THxhko_U.js";function o(n){const t={h1:"h1",...n.components};return e.jsx(t.h1,{children:"Eslint 支持"})}function r(n={}){const{wrapper:t}=n.components||{};return t?e.jsx(t,{...n,children:e.jsx(o,{...n})}):o(n)}export{r as default};
