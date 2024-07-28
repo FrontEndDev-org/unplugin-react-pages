@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/FrontEndDev-org/unplugin-react-pages/compare/v0.1.0...v0.1.1) (2024-07-28)
+
+
+### Bug Fixes
+
+* 修正产出客户端代码版本号等 ([0505f58](https://github.com/FrontEndDev-org/unplugin-react-pages/commit/0505f5801d7b38459019adbf6e419a26ef802069))
+* 修正变量注入 ([aa70a45](https://github.com/FrontEndDev-org/unplugin-react-pages/commit/aa70a45553b62074d170d41a4e8c0adb62a597f9))
+
 ## 0.1.0 (2024-07-27)
 
 
