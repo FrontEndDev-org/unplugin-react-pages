@@ -9,13 +9,13 @@ npm i -D unplugin-react-pages
 ```js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import reactApp from "unplugin-react-pages";
+import { reactPages } from "unplugin-react-pages";
 
 export default defineConfig({
     plugins: [
         // plugins
         react(),
-        reactApp(),
+        reactPages.vite(),
     ],
 });
 ```

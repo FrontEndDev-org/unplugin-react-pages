@@ -1,15 +1,9 @@
-declare global {
-  /**
-   * package name
-   * defined in vite.config.mts
-   */
-  export const PKG_NAME: string;
+/**
+ * globals.d.ts
+ */
 
-  /**
-   * package version
-   * defined in vite.config.mts
-   */
-  export const PKG_VERSION: string;
+declare global {
+  //
 }
 
 export {};
