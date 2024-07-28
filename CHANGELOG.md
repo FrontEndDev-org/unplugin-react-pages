@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/FrontEndDev-org/unplugin-react-pages/compare/v0.1.1...v0.1.2) (2024-07-28)
+
+
+### Bug Fixes
+
+* 修正 package 可见性 ([1c04f70](https://github.com/FrontEndDev-org/unplugin-react-pages/commit/1c04f70c93f786cd6e9680c46b767f5cb7dc5516))
+
 ## [0.1.1](https://github.com/FrontEndDev-org/unplugin-react-pages/compare/v0.1.0...v0.1.1) (2024-07-28)
 
 
