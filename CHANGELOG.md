@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/FrontEndDev-org/unplugin-react-pages/compare/v0.1.2...v0.1.3) (2024-07-28)
+
+
+### Bug Fixes
+
+* 修正 docs basename ([bc9697e](https://github.com/FrontEndDev-org/unplugin-react-pages/commit/bc9697ea7db13c7e52e8e9f49f6f92803ec3a0ff))
+
 ## [0.1.2](https://github.com/FrontEndDev-org/unplugin-react-pages/compare/v0.1.1...v0.1.2) (2024-07-28)
 
 
