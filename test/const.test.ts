@@ -1,6 +1,6 @@
 import { pkgName, pkgVersion } from '../src';
 
 it('pkg', () => {
-  expect(pkgName).toEqual(PKG_NAME);
-  expect(pkgVersion).toEqual(PKG_VERSION);
+  expect(pkgName).toEqual(process.env.PKG_NAME);
+  expect(pkgVersion).toEqual(process.env.PKG_VERSION);
 });
