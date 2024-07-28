@@ -17,12 +17,12 @@ const defaultPluginOptions: () => PluginOptions = () => ({
   disableLazy: false,
   caseSensitive: false,
   fileNames: {
-    'page': ['page.jsx', 'page.tsx'],
-    'action': ['action.jsx', 'action.tsx'],
-    'layout': ['layout.jsx', 'layout.tsx'],
-    'error': ['error.jsx', 'error.tsx'],
-    'loading': ['loading.jsx', 'loading.tsx'],
-    'loader': ['loader.jsx', 'loader.tsx'],
+    page: ['page.jsx', 'page.tsx'],
+    action: ['action.jsx', 'action.tsx'],
+    layout: ['layout.jsx', 'layout.tsx'],
+    error: ['error.jsx', 'error.tsx'],
+    loading: ['loading.jsx', 'loading.tsx'],
+    loader: ['loader.jsx', 'loader.tsx'],
     'not-found': ['not-found.jsx', 'not-found.tsx'],
   },
   excludes: ['**/node_modules/**'],
@@ -44,8 +44,7 @@ export const reactPages = createUnplugin<UserPluginOptions>((options) => {
     },
 
     resolveId(id) {
-      if (id !== virtualModuleId)
-        return;
+      if (id !== virtualModuleId) return;
 
       return resolvedVirtualModuleId;
     },
@@ -55,8 +54,7 @@ export const reactPages = createUnplugin<UserPluginOptions>((options) => {
     },
 
     async load(id) {
-      if (id !== resolvedVirtualModuleId)
-        return;
+      if (id !== resolvedVirtualModuleId) return;
 
       return reactPages?.generate();
     },

@@ -7,9 +7,11 @@ export type DeepPartial<T> = {
 export function withDefaults<T>(defaults: T, inputs?: DeepPartial<T>) {
   return assignWith(defaults, inputs, (v1, v2) => {
     if (isObject(v1)) {
+      // eslint-disable-next-line
       return withDefaults(v1, v2);
     }
 
+    // eslint-disable-next-line
     return v2 === undefined ? v1 : v2;
   });
 }

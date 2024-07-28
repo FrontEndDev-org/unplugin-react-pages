@@ -11,7 +11,7 @@ export interface PluginOptions {
   debug: boolean;
 
   /**
-   * 应用目录
+   * 应用页面目录
    * @default 'src/pages'
    */
   pagesDir: string;
@@ -55,12 +55,12 @@ const defaultPluginOptions: () => PluginOptions = () => ({
   disableLazy: false,
   caseSensitive: false,
   fileNames: {
-    'page': ['page.jsx', 'page.tsx'],
-    'action': ['action.jsx', 'action.tsx'],
-    'layout': ['layout.jsx', 'layout.tsx'],
-    'error': ['error.jsx', 'error.tsx'],
-    'loading': ['loading.jsx', 'loading.tsx'],
-    'loader': ['loader.jsx', 'loader.tsx'],
+    page: ['page.jsx', 'page.tsx'],
+    action: ['action.jsx', 'action.tsx'],
+    layout: ['layout.jsx', 'layout.tsx'],
+    error: ['error.jsx', 'error.tsx'],
+    loading: ['loading.jsx', 'loading.tsx'],
+    loader: ['loader.jsx', 'loader.tsx'],
     'not-found': ['not-found.jsx', 'not-found.tsx'],
   },
   excludes: ['**/node_modules/**'],
@@ -73,7 +73,7 @@ export function reactPages(userPluginOptions?: UserPluginOptions): Plugin {
     name: pkgName,
     enforce: 'pre',
 
-    async configResolved(config) {
+    configResolved(config) {
       reactPages = new ReactPages(config.root, withDefaults(defaultPluginOptions(), userPluginOptions));
     },
 
@@ -98,15 +98,13 @@ export function reactPages(userPluginOptions?: UserPluginOptions): Plugin {
     },
 
     resolveId(id) {
-      if (id !== virtualModuleId)
-        return;
+      if (id !== virtualModuleId) return;
 
       return resolvedVirtualModuleId;
     },
 
     async load(id) {
-      if (id !== resolvedVirtualModuleId)
-        return;
+      if (id !== resolvedVirtualModuleId) return;
 
       return reactPages?.generate();
     },

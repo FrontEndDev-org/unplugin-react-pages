@@ -17,6 +17,5 @@ namespace NodeJS {
      * Github deploy action
      */
     VITE_APP_BASENAME?: string;
-
   }
 }

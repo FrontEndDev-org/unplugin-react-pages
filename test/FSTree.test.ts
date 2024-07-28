@@ -267,7 +267,7 @@ it('分组', () => {
   // /users
   expect(tree.root?.children).toHaveLength(2);
   // console.log(tree.root?.children);
-  const usersFSPage = tree.root?.children.find(p => p.pathName === 'users');
+  const usersFSPage = tree.root?.children.find((p) => p.pathName === 'users');
   expect(usersFSPage).not.toBeUndefined();
   // /users/[username]
   // /users/pages
@@ -275,7 +275,7 @@ it('分组', () => {
   // /users/pages/[pageNo]
 
   // /(books)
-  const books = tree.root?.children.find(p => p.pathName === '(books)');
+  const books = tree.root?.children.find((p) => p.pathName === '(books)');
   expect(books?.group).toEqual('books');
   expect(books).not.toBeUndefined();
 
@@ -285,7 +285,7 @@ it('分组', () => {
   // /(books)/[bookId]/author
   // /(books)/[bookId]/chapters
   expect(books?.children[0].children).toHaveLength(2);
-  const chapters = books?.children[0].children.find(p => p.pathName === 'chapters');
+  const chapters = books?.children[0].children.find((p) => p.pathName === 'chapters');
   expect(chapters?.pathName).toEqual('chapters');
   expect(chapters?.group).toEqual('books');
 
@@ -360,8 +360,7 @@ it('分组 + 布局', () => {
     cwd: '/',
     logger: createLogger(),
     resolveFileName: (fsNode, fileType) => {
-      if (fileType !== 'layout')
-        return undefined;
+      if (fileType !== 'layout') return undefined;
       return includeLayoutDirs.includes(fsNode.dirName) ? 'layout.tsx' : undefined;
     },
     resolveDuplicate: () => undefined,

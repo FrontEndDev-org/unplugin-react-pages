@@ -3,23 +3,13 @@
  * @ref https://www.npmjs.com/package/lint-staged
  */
 export default {
-  '*.{js,mjs,cjs,ts,mts,jsx,tsx}': [
-    'eslint --fix',
-  ],
+  '*.{js,mjs,cjs,ts,mts,jsx,tsx}': ['eslint --fix'],
 
-  '*.vue': [
-    'eslint --fix',
-  ],
+  '*.vue': ['eslint --fix'],
 
-  '*.{css,scss}': [
-    'stylelint --fix --allow-empty-input',
-  ],
+  '*.{css,scss}': ['stylelint --fix --allow-empty-input'],
 
-  '!(package-lock).json': [
-    'prettier --write',
-  ],
+  '!(package-lock).json': ['prettier --write'],
 
-  '!(pnpm-lock).{yml,yaml}': [
-    'prettier --write',
-  ],
+  '!(pnpm-lock).{yml,yaml}': ['prettier --write'],
 };

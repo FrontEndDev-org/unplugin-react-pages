@@ -13,8 +13,7 @@ class PageRoute {
   get path() {
     const paths = [this.fsNode.path];
     const find = (fsNode?: FSNode) => {
-      if (!fsNode)
-        return;
+      if (!fsNode) return;
 
       // 有分组 depth = 1 结束
       if (fsNode.group && fsNode.depth === 1) {
@@ -88,7 +87,7 @@ class LayoutRoute {
 
     if (this.children.length) {
       lines.push(indentLine('children: [', indent_2));
-      lines.push(...this.children.flatMap(child => child.render(indent + 2, tabSize)));
+      lines.push(...this.children.flatMap((child) => child.render(indent + 2, tabSize)));
       lines.push(indentLine('],', indent_2));
     }
 
@@ -123,8 +122,7 @@ export class FSRouter {
           }
         }
 
-        if (node.parent)
-          find(node.parent);
+        if (node.parent) find(node.parent);
       };
 
       find(pageRoute.fsNode);
@@ -133,12 +131,10 @@ export class FSRouter {
     this.layoutRoutes.forEach((layoutRoute) => {
       const find = (node: FSNode) => {
         const parent = node.parent;
-        if (!parent)
-          return;
+        if (!parent) return;
 
         // 独立分组布局根节点
-        if (node.group && node.depth === 1)
-          return;
+        if (node.group && node.depth === 1) return;
 
         if (parent.layoutFileName) {
           const parentRoute = this.layoutRoutes.get(parent.id);

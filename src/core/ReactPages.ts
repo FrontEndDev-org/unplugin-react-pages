@@ -25,8 +25,7 @@ export class ReactPages {
       logger: this.logger,
       resolveFileName: (page, fileType) => {
         const fileNames = ensureArray(this.options.fileNames[fileType]);
-        if (fileNames.length === 0)
-          return;
+        if (fileNames.length === 0) return;
 
         return fileNames.find((fileName) => {
           const absFile = nodePath.join(this.absPagesDir, page.dirName, fileName);
@@ -35,12 +34,10 @@ export class ReactPages {
       },
       resolveDuplicate: (fsNode, duplicatePages) => {
         const fileNames = ensureArray(this.options.fileNames.page);
-        if (fileNames.length === 0)
-          return;
+        if (fileNames.length === 0) return;
 
         for (let i = 0; i < fileNames.length; i++) {
-          if (duplicatePages.includes(fileNames[i]))
-            return i;
+          if (duplicatePages.includes(fileNames[i])) return i;
         }
       },
     });
@@ -68,25 +65,22 @@ export class ReactPages {
     this.onChange = onChange;
     this.logger.info(`setup`);
 
-    devServer.watcher.on('unlink', async (path) => {
-      if (!this._inPagesDir(path))
-        return;
+    devServer.watcher.on('unlink', (path) => {
+      if (!this._inPagesDir(path)) return;
 
-      await this.removeFile(path);
+      void this.removeFile(path);
     });
 
-    devServer.watcher.on('add', async (path) => {
-      if (!this._inPagesDir(path))
-        return;
+    devServer.watcher.on('add', (path) => {
+      if (!this._inPagesDir(path)) return;
 
-      await this.addFile(path);
+      void this.addFile(path);
     });
 
-    devServer.watcher.on('change', async (path) => {
-      if (!this._inPagesDir(path))
-        return;
+    devServer.watcher.on('change', (path) => {
+      if (!this._inPagesDir(path)) return;
 
-      await this.updateFile(path);
+      void this.updateFile(path);
     });
 
     await this.setup();
@@ -121,8 +115,7 @@ export class ReactPages {
       // .sort((a, b) => a.split(nodePath.sep).length - b.split(nodePath.sep).length);
       this.logger.info(`Page files: ${JSON.stringify(pageFiles2)}`);
       this.fsTree.mount(pageFiles2);
-    }
-    else {
+    } else {
       this.logger.error(`No page file name specified`);
     }
   }
@@ -139,7 +132,7 @@ export class ReactPages {
     this.onChange?.();
   }
 
-  async updateFile(file: string) {
+  updateFile(file: string) {
     this.logger.info(`Update file: ${file}`);
   }
 

@@ -36,5 +36,5 @@ yarn.lock
 # testing
 /coverage
 
-# project
-/test/example-dest
+# release-please
+.release-please-manifest.json

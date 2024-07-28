@@ -10,7 +10,7 @@ import pkg from './package.json';
  * @ref https://vitest.dev/
  */
 export default defineConfig((config) => {
-  return ({
+  return {
     plugins: [
       externalizeDeps(),
       dts({
@@ -57,5 +57,5 @@ export default defineConfig((config) => {
         reporter: ['lcov', 'text'],
       },
     },
-  });
+  };
 });

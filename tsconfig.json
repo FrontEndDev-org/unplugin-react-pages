@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2023",
     "jsx": "react",
-    "lib": ["ES2023", "DOM"],
+    "lib": ["ES2023"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,

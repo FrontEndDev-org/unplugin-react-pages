@@ -51,8 +51,6 @@ export default defineConfig({
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true,
     }),
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-ignore
     reactPages.vite({
       debug: true,
       logLevel: 'info',
