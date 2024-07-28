@@ -12,7 +12,13 @@ import pkg from './package.json';
 export default defineConfig((config) => {
   return {
     plugins: [
-      externalizeDeps(),
+      externalizeDeps({
+        deps: true,
+        devDeps: true,
+        peerDeps: true,
+        optionalDeps: true,
+        nodeBuiltins: true,
+      }),
       dts({
         include: 'src',
       }),
@@ -46,9 +52,9 @@ export default defineConfig((config) => {
         ],
       },
     },
-    optimizeDeps: {
-      exclude: ['fsevents'],
-    },
+    // optimizeDeps: {
+    //   exclude: ['fsevents'],
+    // },
     test: {
       globals: true,
       coverage: {
