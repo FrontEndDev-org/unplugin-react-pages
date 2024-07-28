@@ -58,6 +58,7 @@
     "build": "NODE_ENV=production vite build",
     "docs:dev": "pnpm -F 'docs' run dev",
     "docs:build": "pnpm -F 'docs' run build",
+    "docs:start": "pnpm -F 'docs' run preview",
     "pre-commit": "pnpm run lint:type"
   },
   "workspaces": [
