@@ -3,9 +3,8 @@
  * @ref https://eslint.org/
  */
 
-import javaScript from '@eslint/js';
-import typeScript from 'typescript-eslint';
-import tsParser from '@typescript-eslint/parser';
+import js from '@eslint/js';
+import ts from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -15,9 +14,15 @@ import uno from '@unocss/eslint-plugin';
 import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import prettierConfig from 'eslint-config-prettier';
 
-export default typeScript.config(
+export default ts.config(
   {
-    ignores: ['**/.{git,idea,vscode,husky}/**', '**/dist/**', '**/dist-*/**', '**/coverage/**'],
+    ignores: [
+      //
+      '**/.{git,idea,vscode,husky}/**',
+      '**/dist/**',
+      '**/dist-*/**',
+      '**/coverage/**',
+    ],
   },
 
   // import
@@ -43,7 +48,7 @@ export default typeScript.config(
   },
 
   // js
-  javaScript.configs.recommended,
+  js.configs.recommended,
   {
     rules: {
       'no-unused-vars': ['off'],
@@ -51,11 +56,10 @@ export default typeScript.config(
   },
 
   // ts
-  ...typeScript.configs.recommended,
-  ...typeScript.configs.recommendedTypeChecked,
+  ...ts.configs.recommended,
+  ...ts.configs.recommendedTypeChecked,
   {
     languageOptions: {
-      parser: tsParser,
       parserOptions: {
         project: true,
         tsconfigRootDir: import.meta.dirname,
@@ -67,7 +71,7 @@ export default typeScript.config(
   },
   {
     files: ['**/*.{js,cjs,mjs,jsx}'],
-    ...typeScript.configs.disableTypeChecked,
+    ...ts.configs.disableTypeChecked,
   },
 
   // react
