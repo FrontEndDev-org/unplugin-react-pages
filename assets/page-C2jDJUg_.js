@@ -1,4 +1,4 @@
-import{j as s}from"./index-BWSNXFtw.js";function a(n){const e={code:"code",h1:"h1",pre:"pre",span:"span",...n.components};return s.jsxs(s.Fragment,{children:[s.jsx(e.h1,{children:"安装插件"}),`
+import{j as s}from"./index-DEHyCqHS.js";function a(n){const e={code:"code",h1:"h1",pre:"pre",span:"span",...n.components};return s.jsxs(s.Fragment,{children:[s.jsx(e.h1,{children:"安装插件"}),`
 `,s.jsx(e.pre,{children:s.jsx(e.code,{className:"hljs language-bash",children:`npm i -D unplugin-react-pages
 `})}),`
 `,s.jsx(e.h1,{children:"使用插件"}),`

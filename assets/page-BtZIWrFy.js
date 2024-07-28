@@ -1,1 +1,0 @@
-import{j as e}from"./index-BWSNXFtw.js";function o(n){const t={h1:"h1",...n.components};return e.jsx(t.h1,{children:"loading"})}function r(n={}){const{wrapper:t}=n.components||{};return t?e.jsx(t,{...n,children:e.jsx(o,{...n})}):o(n)}export{r as default};
